@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odebunmi Quadri | Full Stack Developer & Digital Marketer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --accent: #fd79a8;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: underline 2s infinite alternate;
+        }
+        
+        @keyframes underline {
+            0% { transform: scaleX(0); }
+            100% { transform: scaleX(1); }
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+        }
+
+        
+.typing-container {
+  border-right: 2px solid #00ffcc;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+.typing {
+          color: rgb(242, 242, 68); 
+          font-family: "Courier";
+          margin: 0;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 80% }
+}
+
+/* Blinking caret */
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent }
+  50% { border-color: #00ffcc }
+}
+
+
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="logo text-2xl md:text-3xl">FINESSE</a>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link active-nav text-gray-800 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-gray-800 font-medium">About</a>
+                    <a href="#services" class="nav-link text-gray-600 hover:text-gray-800 font-medium">Services</a>
+                    <a href="#skills" class="nav-link text-gray-600 hover:text-gray-800 font-medium">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-600 hover:text-gray-800 font-medium">Projects</a>
+                    <a href="#testimonials" class="nav-link text-gray-600 hover:text-gray-800 font-medium">Testimonials</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-gray-800 font-medium">Contact</a>
+                </nav>
+                
+                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden py-4" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-gray-800 font-medium">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-gray-800 font-medium">About</a>
+                    <a href="#services" class="text-gray-600 hover:text-gray-800 font-medium">Services</a>
+                    <a href="#skills" class="text-gray-600 hover:text-gray-800 font-medium">Skills</a>
+                    <a href="#projects" class="text-gray-600 hover:text-gray-800 font-medium">Projects</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-gray-800 font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-800 font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-32 pb-20 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Hi, I'm
+                        
+                    <div class="typing-container"><span class="typing">Odebunmi Quadri</span></div></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Full Stack Developer & Digital Marketer</h2>
+                    <p class="text-lg mb-8">I create stunning digital experiences and powerful brands that drive results.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-white text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-purple-100 transition duration-300">Hire Me</a>
+                        <a href="#projects" class="border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-purple-700 transition duration-300">View Work</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                    <div class="relative">
+                        <img src="https://i.postimg.cc/QC7pTWkd/re.png" alt="Odebunmi Quadri" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white shadow-xl">
+                        <div class="absolute -bottom-5 -right-5 bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-bold">Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About <span class="text-purple-600">Me</span></h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center" data-aos="fade-right">
+                    <img src="https://i.postimg.cc/WbMGpg19/IMG-20250218-180052-pica.png" alt="About Odebunmi Quadri" class="rounded-lg shadow-xl w-full max-w-md">
+                </div>
+                <div class="md:w-2/3 md:pl-12" data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Who Am I?</h3>
+                    <p class="text-gray-600 mb-6">I'm Odebunmi Quadri, a passionate Full Stack Developer and Digital Marketer with expertise in creating innovative digital solutions and powerful brand identities. With a strong foundation in both technology and creative design, I bring a unique perspective to every project.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="text-purple-600 mr-4 mt-1">
+                                <i class="fas fa-user-tie text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Frontend Development</h4>
+                                <p class="text-gray-600">Building robust web applications with modern technologies.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-purple-600 mr-4 mt-1">
+                                <i class="fas fa-bullhorn text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Digital Marketing</h4>
+                                <p class="text-gray-600">Creating strategies that drive engagement and conversions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-purple-600 mr-4 mt-1">
+                                <i class="fas fa-cube text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">3D/VFX Design</h4>
+                                <p class="text-gray-600">Crafting stunning visuals with Blender and Unreal Engine.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-purple-600 mr-4 mt-1">
+                                <i class="fas fa-lightbulb text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Brand Strategy</h4>
+                                <p class="text-gray-600">Developing compelling brand identities and narratives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition duration-300">Contact Me</a>
+                        <a href="#" class="border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-medium hover:bg-purple-600 hover:text-white transition duration-300">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">My <span class="text-purple-600">Services</span></h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-code text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Web Development</h3>
+                    <p class="text-gray-600 mb-4">Custom web applications built with modern technologies like React, Node.js, and MongoDB for optimal performance and scalability.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Frontend Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Responsive Design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>API Integration</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-bullseye text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Digital Marketing</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive digital marketing strategies to grow your online presence and drive targeted traffic to your business.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>SEO Optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Social Media Management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Content Strategy</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-cube text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">3D/VFX Design</h3>
+                    <p class="text-gray-600 mb-4">Stunning 3D visualizations and visual effects created with Blender and Unreal Engine for immersive experiences.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>3D Modeling & Animation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Visual Effects</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Virtual Environments</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-paint-brush text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Brand Design</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive brand identity development including logos, style guides, and visual assets for cohesive branding.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Logo Design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Brand Guidelines</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Visual Identity</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-mobile-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Mobile Development</h3>
+                    <p class="text-gray-600 mb-4">Cross-platform mobile applications built with React Native for consistent performance across iOS and Android.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>iOS & Android Apps</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>UI/UX Design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>App Store Optimization</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Growth Strategy</h3>
+                    <p class="text-gray-600 mb-4">Data-driven growth strategies to scale your business through customer acquisition and retention techniques.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Market Analysis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Conversion Optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Performance Tracking</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">My <span class="text-purple-600">Skills</span></h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Technical Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Skill 1 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">HTML/CSS/JavaScript</span>
+                                <span class="font-medium text-purple-600">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Skill 2 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">React/Node.js</span>
+                                <span class="font-medium text-purple-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Skill 3 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">MongoDB/SQL</span>
+                                <span class="font-medium text-purple-600">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Skill 4 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Blender/Unreal Engine</span>
+                                <span class="font-medium text-purple-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Professional Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Skill 1 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Digital Marketing</span>
+                                <span class="font-medium text-purple-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Skill 2 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Brand Strategy</span>
+                                <span class="font-medium text-purple-600">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Skill 3 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">UI/UX Design</span>
+                                <span class="font-medium text-purple-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Skill 4 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Project Management</span>
+                                <span class="font-medium text-purple-600">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools & Technologies -->
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Tools & Technologies</h3>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-12 h-12 mb-2">
+                        <span class="text-gray-600">HTML5</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-12 h-12 mb-2">
+                        <span class="text-gray-600">CSS3</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12 mb-2">
+                        <span class="text-gray-600">JavaScript</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-12 h-12 mb-2">
+                        <span class="text-gray-600">React</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-12 h-12 mb-2">
+                        <span class="text-gray-600">Node.js</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-12 h-12 mb-2">
+                        <span class="text-gray-600">MongoDB</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender" class="w-12 h-12 mb-2">
+                        <span class="text-gray-600">Blender</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine" class="w-12 h-12 mb-2">
+                        <span class="text-gray-600">Unreal Engine</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">My <span class="text-purple-600">Projects</span></h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <!-- Project Filter -->
+            <div class="flex justify-center mb-12" data-aos="fade-up">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg border border-gray-200 bg-white text-gray-800 hover:bg-gray-100 focus:z-10 focus:bg-purple-600 focus:text-white project-filter" data-filter="all">
+                        All
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 bg-white text-gray-800 hover:bg-gray-100 focus:z-10 focus:bg-purple-600 focus:text-white project-filter" data-filter="web">
+                        Web Development
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border border-gray-200 bg-white text-gray-800 hover:bg-gray-100 focus:z-10 focus:bg-purple-600 focus:text-white project-filter" data-filter="marketing">
+                        Digital Marketing
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg border border-gray-200 bg-white text-gray-800 hover:bg-gray-100 focus:z-10 focus:bg-purple-600 focus:text-white project-filter" data-filter="vfx">
+                        3D/VFX
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="https://i.postimg.cc/ydMQnYnR/Screenshot-2025-05-24-104425.png" alt="E-commerce Platform" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-purple-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="https://fhiness.github.io/dogsite/" class="text-white px-6 py-3 border-2 border-white rounded-lg font-medium hover:bg-white hover:text-purple-600 transition duration-300">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A full-featured online store with payment integration and inventory management.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Html</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Tailwindcss</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Javascript</span>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="https://i.postimg.cc/Gh7Y1Sw7/Screenshot-2025-05-24-112827.png" alt="E-commerce Platform" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-purple-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="https://fhiness.github.io/fortune/" class="text-white px-6 py-3 border-2 border-white rounded-lg font-medium hover:bg-white hover:text-purple-600 transition duration-300">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">A Trading Web Tutorial platform</h3>
+                        <p class="text-gray-600 mb-4">A full-featured online trading tutorial with plans integration</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">React.js</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Tailwindcss</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-category="marketing" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="https://i.postimg.cc/SNN83b5Y/Screenshot-2025-05-24-111637.png" alt="Digital Marketing Campaign" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-purple-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="
+https://fhiness.github.io/Task_manager-/" class="text-white px-6 py-3 border-2 border-white rounded-lg font-medium hover:bg-white hover:text-purple-600 transition duration-300">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Digital Marketing Tool</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive marketing tool for organizing task which increase productivity and time management.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">react.js</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Tailwindcss</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Content Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                   <!-- Project 5 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-category="marketing" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="https://i.postimg.cc/KvMFZRC6/Screenshot-2025-05-24-104558.png" alt="Digital Marketing Campaign" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-purple-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="https://fhiness.github.io/phonestoredemo1/" class="text-white px-6 py-3 border-2 border-white rounded-lg font-medium hover:bg-white hover:text-purple-600 transition duration-300">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Mobile device and accessories website</h3>
+                        <p class="text-gray-600 mb-4">Attractive and Comprehensive e-commerce store that increased client revenue by 35% in 6 months.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Html/Css</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Tailwindcss</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Social Media</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Content Strategy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-category="vfx" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="3D Product Visualization" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-purple-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="#" class="text-white px-6 py-3 border-2 border-white rounded-lg font-medium hover:bg-white hover:text-purple-600 transition duration-300">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">3D Product Visualization</h3>
+                        <p class="text-gray-600 mb-4">High-quality 3D renders for an e-commerce product line with interactive elements.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Blender</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Unreal Engine</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">3D Modeling</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="https://i.postimg.cc/5tvFL4HT/Screenshot-2025-05-24-104722.png" alt="Portfolio Website" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-purple-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="
+https://fhiness.github.io/WhatsAppLiks/" class="text-white px-6 py-3 border-2 border-white rounded-lg font-medium hover:bg-white hover:text-purple-600 transition duration-300">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">A Web App(Whatsapp_links Generator)</h3>
+                        <p class="text-gray-600 mb-4">A link generator website with features like automated link message.. with Api integration.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">HTML/CSS</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Wordpress</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="https://i.postimg.cc/htRnhKBf/Screenshot-2025-05-24-111311.png" alt="Brand Identity Package" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-purple-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="https://fhiness.github.io/finesseeditor/" class="text-white px-6 py-3 border-2 border-white rounded-lg font-medium hover:bg-white hover:text-purple-600 transition duration-300">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">A Well designed Fully Functioning Image Editor</h3>
+                        <p class="text-gray-600 mb-4">Complete image editor development including resize image, add text, sticker , style guide, and editing materials.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Html/css</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Tailwindcss</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Javascript</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Graphic Design</span>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-category="vfx" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Architectural Visualization" class="w-full h-64 object-cover">
+                        <div class="project-overlay absolute inset-0 bg-purple-600 bg-opacity-90 flex items-center justify-center opacity-0 transition duration-300">
+                            <a href="#" class="text-white px-6 py-3 border-2 border-white rounded-lg font-medium hover:bg-white hover:text-purple-600 transition duration-300">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Architectural Visualization</h3>
+                        <p class="text-gray-600 mb-4">Interactive 3D walkthrough of a luxury residential development.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">3D Modeling</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">Unreal Engine</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm rounded-full">VR Ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-purple-700 transition duration-300">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Client <span class="text-purple-600">Testimonials</span></h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">CEO, TechSolutions Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Odebunmi transformed our online presence with his web development skills. The e-commerce platform he built increased our sales by 180% within the first quarter."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Brown" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Michael Brown</h4>
+                            <p class="text-gray-600 text-sm">Marketing Director, BrandVision</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The digital marketing campaign Quadri developed for us was exceptional. His strategic approach and attention to detail resulted in a 300% increase in lead generation."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Amina Mohammed" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Amina Mohammed</h4>
+                            <p class="text-gray-600 text-sm">Creative Director, VisualFX Studio</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Quadri's 3D visualization work is simply stunning. He brought our architectural project to life with incredible detail and realism that impressed all our clients."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">My <span class="text-purple-600">Certifications</span></h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Certificate 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-certificate text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Full Stack Development</h3>
+                    <p class="text-gray-600 mb-4">Certified by Meta (Facebook) through Coursera</p>
+                    <span class="text-sm text-gray-500">Issued: June 2022</span>
+                </div>
+                
+                <!-- Certificate 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-certificate text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Digital Marketing</h3>
+                    <p class="text-gray-600 mb-4">Google Digital Marketing Certification</p>
+                    <span class="text-sm text-gray-500">Issued: March 2021</span>
+                </div>
+                
+                <!-- Certificate 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-certificate text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Blender 3D Mastery</h3>
+                    <p class="text-gray-600 mb-4">Udemy Certified Blender Professional</p>
+                    <span class="text-sm text-gray-500">Issued: January 2023</span>
+                </div>
+                
+                <!-- Certificate 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-certificate text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Unreal Engine 5</h3>
+                    <p class="text-gray-600 mb-4">Epic Games Certified Developer</p>
+                    <span class="text-sm text-gray-500">Issued: November 2022</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-purple-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-yellow-300">Touch</span></h2>
+                <div class="w-20 h-1 bg-yellow-300 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8" data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <p class="mb-8">Feel free to reach out to me for project inquiries, collaborations, or just to say hello!</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-yellow-300 mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Location</h4>
+                                <p>Osogbo, Nigeria</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-yellow-300 mr-4 mt-1">
+                                <i class="fas fa-envelope text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <a href="mailto:quadriodebunmi41@gmail.com">quadriodebunmi41@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-yellow-300 mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Phone</h4>
+                                <p>+234 812 345 6789</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-purple-700 flex items-center justify-center hover:bg-yellow-300 hover:text-purple-600 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-purple-700 flex items-center justify-center hover:bg-yellow-300 hover:text-purple-600 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-purple-700 flex items-center justify-center hover:bg-yellow-300 hover:text-purple-600 transition duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-purple-700 flex items-center justify-center hover:bg-yellow-300 hover:text-purple-600 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <form class="bg-white rounded-lg shadow-lg p-8 text-gray-800">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="logo text-2xl">FINESSE</a>
+                    <p class="mt-2 text-gray-400">Creating digital excellence through innovation.</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">&copy; 2025 Odebunmi Quadri. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-purple-700 transition duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.project-filter');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-purple-600', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-800');
+                });
+                
+                // Add active class to clicked button
+                this.classList.remove('bg-white', 'text-gray-800');
+                this.classList.add('bg-purple-600', 'text-white');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav', 'text-gray-800');
+                link.classList.add('text-gray-600');
+                
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active-nav', 'text-gray-800');
+                    link.classList.remove('text-gray-600');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
